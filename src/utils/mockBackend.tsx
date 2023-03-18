@@ -1,27 +1,29 @@
 import { mockDB } from "./mockDB";
 
-export function mockAPICall(path : string, requestInfo : any )
+export function mockAPICall(path : string, requestInfo : any ) : Promise<any>
 {
+    // delay in ms
+    const delay = 250;
+
     return new Promise((resolve, reject) => {
-        setTimeout(() => localFetch(path,requestInfo), 250);
+        setTimeout(() => localFetch(path,requestInfo), delay);
 
         function localFetch(path: string, requestInfo : any )
         {
             // Get the last 6 characters from path argument
             // So we can check what kind of respond to generate
+            // Hacky approach just for mocking purposes
+
             const numOfLastChars = 6;
             const lastPathChars = path.slice(path.length-numOfLastChars, path.length);
-            
 
             // Handle GET requests
             if (requestInfo.method == "GET")
             {
                 if (path == "/recommendation")
                 {
-                    // Simulate using recommendation system
-                    //let randomIndx : number = getRandomInt(data.length);
-                    // Use response similar to using window.fetch
-                    // const dataJSON = JSON.stringify(getData(randomIndx));
+                    // When asking mock DB for a recommendation it's taken from its local array,
+                    // returned and removed from local array
 
                     const recommendation = mockDB.getRecommendation();
                     const dataJSON = JSON.stringify(recommendation);

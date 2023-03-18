@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 
-import { FilmContext } from "../../context/FilmContext";
+import { AppContext } from "../../context/AppContext";
 
 import { onButtonClick } from "../../handlers/handleButtonClick";
 
@@ -11,10 +11,10 @@ type SubmitButtonProps = {
 
 const SubmitButton = ( { type, id } : SubmitButtonProps ) => {
     // Need global setters
-    const { isFetching, setIsFetching, setShouldGetNewFilm , setFilmContext } = useContext(FilmContext);
+    const { fetchInfo, setFetchInfo } = useContext(AppContext);
 
     return (
-        <button onClick={ () => onButtonClick( setShouldGetNewFilm, setFilmContext, isFetching, setIsFetching, type, id) } className={`button-${type}`}>{type}</button>
+        <button onClick={ () => onButtonClick( fetchInfo, setFetchInfo, type, id) } className={`button-${type}`}>{type}</button>
     )
 }
 

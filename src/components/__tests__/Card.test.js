@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Card from "../Card"
-import { FilmContext } from "../../context/FilmContext";
+import { FilmContext } from "../../context/AppContext";
 
 test("Card shows default value", () => {
     render(<Card />);

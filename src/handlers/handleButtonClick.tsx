@@ -1,24 +1,27 @@
+import { FetchInfoType } from "../global/types";
 import { mockAPICall } from "../utils/mockBackend";
 import { handleQueryNewFilm } from "./handleQuery";
 
+import { ReactSetStateType } from "../global/types";
+
 // Need to provide callback functions
-export const onButtonClick = (  setShouldGetNewFilm : Function,
-                                setFilmContext : Function,
-                                isFetching: boolean,
-                                setIsFetching : Function,
+export const onButtonClick = (  fetchInfo : FetchInfoType,
+                                setFetchInfo : ReactSetStateType,
                                 type: "accept" | "reject",
                                 id: string ) => {
-    if (isFetching)
+    if (fetchInfo.isFetching)
     {   
-        console.log("You're already fetching data! Wait until response!");
+        const msg = "You're already fetching data! Wait until response!";
+        setFetchInfo( (fetchInfo) => ({ ...fetchInfo,
+                                        serverMsg: msg }));
         return;
     }
 
-    setIsFetching(true);
+    setFetchInfo( (fetchInfo) => ({ ...fetchInfo , isFetching: true }));
     handleSubmit(type, id)
     .then( (res : any) : any => res.json() )
-    .then( ( json : any ) => handleSuccesfulPUTrequest(setShouldGetNewFilm, isFetching, setIsFetching, setFilmContext, json)) 
-    .catch( ( json : any ) => handleUnsuccesfulPUTrequest(setIsFetching, json) )
+    .then( ( json : any ) => handleSuccesfulPUTrequest(fetchInfo, setFetchInfo, json))
+    .catch( ( err : any ) => handleUnsuccesfulPUTrequest(err, fetchInfo, setFetchInfo))
 }
 
 export const handleSubmit = (type : "accept" | "reject", id: string ) => {
@@ -38,22 +41,27 @@ export const handleSubmit = (type : "accept" | "reject", id: string ) => {
     });
 }
 
-const handleSuccesfulPUTrequest = (setShouldGetNewFilm : Function, isFetching : boolean, setIsFetching: Function, setFilmContext : Function, res : { status: string } ) => 
+const handleSuccesfulPUTrequest = (fetchInfo: FetchInfoType, setFetchInfo: ReactSetStateType, res : { status: string } ) => 
 {
-    console.log("[PUT REQUEST RESPOND]: " + res.status);
-
-    // setIsFetching(false);
-    // Might be buggy to comment it out but allows for nice continuous loader animation
+    const succesfulServerResponse: string = "[PUT REQUEST RESPOND]: " + res.status;
+    
+    // Not setting isFetching to false might be buggy but allows for nice continuous loader animation
+    // Remove if there are any problems with state
 
     // Immedietely ask for new reccomendation after succesful PUT request
-    setShouldGetNewFilm(true);
+    setFetchInfo( (fetchInfo) => ( {...fetchInfo, shouldGetNewFilm : true,
+                                                serverMsg: succesfulServerResponse}) );
+
     return;
 }
 
-const handleUnsuccesfulPUTrequest = (err : any, setIsFetching : Function) => 
+const handleUnsuccesfulPUTrequest = (err : any, fetchInfo: FetchInfoType, setFetchInfo : ReactSetStateType) => 
 {
+    const unsuccesfulServerResponse: string = "[PUT REQUEST RESPOND]: ERROR: " + err;
+
+    // Inform about fetch status
+    setFetchInfo((fetchInfo) => ({ ...fetchInfo , isFetching: false,
+                                                   serverMsg: unsuccesfulServerResponse }));
+
     console.log(err);
-    
-    // Inform about fetch status and don't ask for new recommendation
-    setIsFetching(false);
 }

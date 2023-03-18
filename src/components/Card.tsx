@@ -5,28 +5,26 @@ import CardHeader from "./CardHeader";
 import Rating from "./Raiting/Rating";
 
 import { useContext } from "react";
-import { FilmContext, FilmContextType } from "../context/FilmContext";
+import { DisplayInfoType, FilmInfoType } from "../global/types";
 
 import NoRecommendationCard from "./NoRecommendationCard/NoRecommendationCard"
 
-const Card = () => {
-    const { isFetching, filmContext, shownAllRecommendations } = useContext<FilmContextType>(FilmContext);
-
+const Card = ({ filmInfo, shownAllRecommendations} :
+              { filmInfo : FilmInfoType; shownAllRecommendations : boolean }) => {
     const recommendationCard = (
         <div className="card-container">
-            <ImageDisplay imgURL={filmContext.imageURL}/>
+            <ImageDisplay imgURL={filmInfo.imageURL}/>
             <div className="filminfo-container">
-                <CardHeader title={filmContext.title} />
-                <FilmDescription desc={filmContext.summary} />
-                <Rating rating={filmContext.rating} />
+                <CardHeader title={filmInfo.title} />
+                <FilmDescription desc={filmInfo.summary} />
+                <Rating rating={filmInfo.rating} />
                 <div className="buttons-container">
-                    <SubmitButton type="accept" id={filmContext.id} />
-                    <SubmitButton type="reject" id={filmContext.id} />
+                    <SubmitButton type="accept" id={filmInfo.id} />
+                    <SubmitButton type="reject" id={filmInfo.id} />
                 </div>
             </div>
         </div>
     )
-
     return shownAllRecommendations ? <NoRecommendationCard /> : recommendationCard
 }
 
