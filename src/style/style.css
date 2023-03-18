@@ -1,0 +1,452 @@
+body {
+    margin:0;
+    font-size: 1.5em;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #222;
+}
+
+#app
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height:100vh;
+    background: white;
+}
+
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(243, 244, 252, 0.763);
+    border-radius: 35px;
+}
+
+.info-banner-container
+{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 5%;
+  width:50%;
+  height: 30px;
+  background-color: #00d5ff76;
+  border-radius: 25px;
+}
+
+.no-recommendations-container
+{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  width:80%;
+  text-align: center;
+  text-justify: inter-word;
+  font-weight: 600;
+}
+
+.no-recommendations-container img
+{
+  width:50%;
+}
+
+.filminfo-container
+{
+  width:80%;
+  font-size: 0.6em;
+}
+
+.filmtitle
+{
+  font-size: 1.8em;
+  line-height: 1.0;
+  font-weight: 600;
+  color: rgb(6, 7, 15);
+  align-self: flex-start;
+  border-radius: 25px;
+}
+
+.filmdesc-container
+{
+  padding-top: 3%;
+}
+
+
+
+@keyframes fade-in {
+  0%  {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+
+.buttons-container
+{
+    padding-top: 5%;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@keyframes example {
+  0%  {width:0px;}
+  50%  {width:55px;}
+  80% {width: 45px;}
+  100% {width:50px;}
+}
+
+.rating-container-star img
+{
+  width:50px;
+  animation-name: example;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.3s;
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 60px;
+  padding: 0 50px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 30px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+button:active {
+  transform: scale(0.95,0.9);
+}
+
+.button-accept,
+.button-accept,
+input[type="submit"].button-accept,
+input[type="reset"].button-accept,
+input[type="button"].button-accept {
+  color: #FFF;
+  background-color: #00d4ff;
+  border-color: #00d4ff;
+  margin-right: 5px;
+}
+.button-accept:hover,
+.button-accept:hover,
+input[type="submit"].button-accept:hover,
+input[type="reset"].button-accept:hover,
+.button-accept:focus,
+.button-accept:focus,
+input[type="submit"].button-accept:focus,
+input[type="reset"].button-accept:focus,
+input[type="button"].button-accept:focus,
+input[type="button"].button-accept:hover {
+  color: #FFF;
+  background-color: #01738a;
+  border-color: #01738a;
+}
+
+.button-reject,
+.button-reject,
+input[type="submit"].button-reject,
+input[type="reset"].button-reject,
+input[type="button"].button-reject {
+  color: #FFF;
+  background-color: #d00952;
+  border-color: #d00952;
+  margin-left:5px;
+}
+.button-reject:hover,
+.button-reject:hover,
+input[type="reset"].button-reject:hover,
+input[type="button"].button-reject:hover,
+.button.button-reject:focus,
+button.button-reject:focus,
+input[type="submit"].button-reject:focus,
+input[type="reset"].button-reject:focus,
+input[type="button"].button-reject:focus,
+input[type="submit"].button-reject:hover {
+  color: #FFF;
+  background-color: #6c052b;
+  border-color: #6c052b
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+  .loading-spinner {
+    width: 80px;
+    height: 80px;
+    border: 20px solid #7feaff; /* Light grey */
+    border-top: 20px solid #00d4ff; /* Black */
+    border-radius: 50%;
+    animation: spinner 1.2s ease-in-out infinite;
+  }
+
+  .loading-spinner2 {
+    width: 80px;
+    height: 80px;
+    border: 20px solid #ffffff; /* Light grey */
+    border-top: 20px solid #00d4ff; /* Black */
+    border-radius: 50%;
+    animation: spinner 0.7s ease-in-out infinite;
+  }
+
+  .loader-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff52;
+  }
+
+  .loader-spinner-container {
+    position: absolute;
+
+    animation: fade-in 0.05s;
+
+    top: 45%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 650px) {
+  .container
+{
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    background-color: rgba(243, 244, 252, 0.763);
+    width: 100%;
+    height:100%;
+    border-radius: 0;
+}
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height:100%;
+    margin-top: 5%;
+    padding: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+   }
+
+    .imgdisplay-container
+    {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height:55%;
+    padding-bottom: 2%;
+  }
+
+  .imgdisplay-container img
+{
+    max-width:80%;
+    max-height:100%;
+    border-radius: 25px;
+    animation-name : fade-in;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.3s;
+}
+
+  @keyframes small-star {
+    0%  {width:0px;}
+    50%  {width:40px;}
+    80% {width: 27px;}
+    100% {width:30px;}
+  }
+
+  .filminfo-container
+{
+  padding-top: 2%;
+  width:80%;
+  height: 20%;
+  font-size: 0.6em;
+}
+
+  .rating-container
+{
+  display:flex;
+  height: 20px;
+  width:100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+  .rating-container-star img
+{
+  width:30px;
+  animation-name: small-star;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.3s;
+}
+
+.loader-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff52;
+}
+
+input[type="button"] {
+  display: inline-block;
+  height: 25px;
+  padding: 0 20px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 15px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+}
+
+@media (min-width: 650px) {
+  .card-container
+  {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 35px;
+    width: 550px;
+    height: 800px;
+    -webkit-box-shadow: 8px 8px 59px 3px rgba(66, 68, 90, 0.72);
+    -moz-box-shadow: 8px 8px 59px 3px rgba(66, 68, 90, 0.729);
+    box-shadow: 8px 8px 59px 3px rgba(66, 68, 90, 0.388);
+  }
+
+  .imgdisplay-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 500px;
+    height: 480px;
+}
+
+  .imgdisplay-container img
+{
+    max-width:60%;
+    border-radius: 25px;
+    height: auto;
+    animation-name : fade-in;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.3s;
+}
+
+.rating-container
+{
+  display:flex;
+  height: 30px;
+  width:100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+@keyframes medium-star {
+  0%  {width:0px;}
+  50%  {width:50px;}
+  80% {width: 35px;}
+  100% {width:40px;}
+}
+
+.rating-container-star img
+{
+  width: 40px;
+  animation-name: medium-star;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.3s;
+}
+}
+
+@media (min-width: 1100px) {
+  .card-container
+  {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 35px;
+    width: 600px;
+    height: 1150px;
+    -webkit-box-shadow: 8px 8px 59px 3px rgba(66, 68, 90, 0.72);
+    -moz-box-shadow: 8px 8px 59px 3px rgba(66, 68, 90, 0.729);
+    box-shadow: 8px 8px 59px 3px rgba(66, 68, 90, 0.388);
+  }
+
+  .imgdisplay-container
+  {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      width: 500px;
+      height: 700px;
+  }
+
+  .imgdisplay-container img
+{
+    max-width:90%;
+    border-radius: 25px;
+    height: auto;
+    animation-name : fade-in;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.3s;
+}
+
+.imgdisplay-placeholder
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height:800px;
+}
+
+.rating-container
+{
+  display:flex;
+  height: 50px;
+  width:100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+
+
+}
