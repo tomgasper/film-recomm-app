@@ -1,6 +1,5 @@
 import { FetchInfoType } from "../global/types";
 import { mockAPICall } from "../utils/mockBackend";
-import { handleQueryNewFilm } from "./handleQuery";
 
 import { ReactSetStateType } from "../global/types";
 
@@ -49,7 +48,7 @@ const handleSuccesfulPUTrequest = (fetchInfo: FetchInfoType, setFetchInfo: React
     // Remove if there are any problems with state
 
     // Immedietely ask for new reccomendation after succesful PUT request
-    setFetchInfo( (fetchInfo) => ( {...fetchInfo, shouldGetNewFilm : true,
+    setFetchInfo( (fetchInfo) => ( {...fetchInfo, shouldGetNewFilm : true, 
                                                 serverMsg: succesfulServerResponse}) );
 
     return;

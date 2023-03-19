@@ -74,13 +74,13 @@ describe("App", () => {
 
         expect(screen.getByText("Example Film")).toBeInTheDocument();
         expect(screen.getByText("An example film summary.")).toBeInTheDocument();
-        expect(screen.getByText("accept")).toBeInTheDocument();
-        expect(screen.getByText("reject")).toBeInTheDocument();
+        expect(screen.getByTestId("button-accept")).toBeInTheDocument();
+        expect(screen.getByTestId("button-reject")).toBeInTheDocument();
     });
 
     // Click on "Accept" button
     mockAPICall.mockImplementation( successfulGET2 );
-    userEvent.click(screen.getByText("accept"));
+    userEvent.click(screen.getByTestId("button-accept"));
 
     // Wait for server response and check if new data is fetched and displayed
     await waitFor(() => 
@@ -88,12 +88,12 @@ describe("App", () => {
         expect(screen.queryByTestId("recommendation-card")).toBeInTheDocument();
         expect(screen.getByText("Another film")).toBeInTheDocument();
         expect(screen.getByText("Another example film summary.")).toBeInTheDocument();
-        expect(screen.getByText("accept")).toBeInTheDocument();
-        expect(screen.getByText("reject")).toBeInTheDocument();
+        expect(screen.getByTestId("button-accept")).toBeInTheDocument();
+        expect(screen.getByTestId("button-reject")).toBeInTheDocument();
     });
 
     // Mock the response to simulate the end of recommendations
-    userEvent.click(screen.getByText("reject"));
+    userEvent.click(screen.getByTestId("button-reject"));
     mockAPICall.mockImplementation( successfulGET3 );
 
     // Wait for server response and check if "NoRecommendationCard" is displayed
@@ -112,13 +112,13 @@ describe("App", () => {
         expect(screen.queryByTestId("recommendation-card")).toBeInTheDocument()
         expect(screen.getByText("Example Film")).toBeInTheDocument();
         expect(screen.getByText("An example film summary.")).toBeInTheDocument();
-        expect(screen.getByText("accept")).toBeInTheDocument();
-        expect(screen.getByText("reject")).toBeInTheDocument();
+        expect(screen.getByTestId("button-accept")).toBeInTheDocument();
+        expect(screen.getByTestId("button-reject")).toBeInTheDocument();
     });
 
     // Click on "Accept" button
     mockAPICall.mockImplementation( unsuccessfulPUT );
-    userEvent.click(screen.getByText("accept"));
+    userEvent.click(screen.getByTestId("button-accept"));
 
     // Wait for server response and check if new data is fetched and displayed
     await waitFor(() => 
@@ -126,8 +126,8 @@ describe("App", () => {
         expect(screen.queryByTestId("recommendation-card")).toBeInTheDocument();
         expect(screen.getByText("Example Film")).toBeInTheDocument();
         expect(screen.getByText("An example film summary.")).toBeInTheDocument();
-        expect(screen.getByText("accept")).toBeInTheDocument();
-        expect(screen.getByText("reject")).toBeInTheDocument();
+        expect(screen.getByTestId("button-accept")).toBeInTheDocument();
+        expect(screen.getByTestId("button-reject")).toBeInTheDocument();
     });
     })
 

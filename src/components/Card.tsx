@@ -1,7 +1,7 @@
 import SubmitButton from "./Buttons/SubmitButton";
 import ImageDisplay from "./Image/ImageDisplay";
 import FilmDescription from "./FilmDescription";
-import CardHeader from "./CardHeader";
+import FilmTitle from "./FilmTitle";
 import Rating from "./Rating/Rating";
 
 import { FilmInfoType } from "../global/types";
@@ -14,7 +14,7 @@ const Card = ({ filmInfo, shownAllRecommendations} :
         <div data-testid="recommendation-card" className="card-container">
             <ImageDisplay imgURL={filmInfo.imageURL}/>
             <div className="filminfo-container">
-                <CardHeader title={filmInfo.title} />
+                <FilmTitle title={filmInfo.title} />
                 <FilmDescription desc={filmInfo.summary} />
                 <Rating rating={filmInfo.rating} />
                 <div className="buttons-container">

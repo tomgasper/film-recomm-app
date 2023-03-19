@@ -5,14 +5,14 @@ type ImageDisplayProps = {
     imgURL : string
 };
 
-const ImageDisplay: React.FC<ImageDisplayProps> = ({ imgURL} : ImageDisplayProps) => {
+const ImageDisplay: React.FC<ImageDisplayProps> = ({ imgURL } : ImageDisplayProps) => {
     const [ imgLoaded, setImgLoaded ] = useState(false);
 
     useEffect(() => {
         setImgLoaded(false);
-    }, []);
+    }, [imgURL] );
 
-    const imgStyle = imgLoaded ? {} : { display: "none" };
+    const imgStyle = imgLoaded ? undefined : { display: "none" };
 
     return ( 
         <div className="imgdisplay-container" >
