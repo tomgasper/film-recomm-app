@@ -1,6 +1,8 @@
-# Recommend Film Web Application
+# Film recommendation Web App
 
 This is a very simple web application that recommends a video to the user. The application has been built using React and TypeScript. Testing has been done using `react-testing-library` and `jest`.
+
+You can view it live here: [View the web app](https://tomgasper.github.io/film-recomm-app)
 
 ## Installation
 
@@ -13,7 +15,7 @@ To install the application, follow these steps:
 
 ## Usage
 
-Once the application is running, the user can click on the "Recommend me a video" button to receive a video recommendation. The recommendation is chosen randomly from a list of predefined videos.
+Once the application is running, the user can click on the left or right button to accept or reject a recommendation. The recommendation is retrived randomly from a list of predefined videos that sits on the mocked server.
 
 ## Testing
 
