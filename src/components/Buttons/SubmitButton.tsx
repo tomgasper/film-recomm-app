@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 
 import { AppContext } from "../../context/AppContext";
 
@@ -14,7 +14,7 @@ const SubmitButton = ( { type, id } : SubmitButtonProps ) => {
     const { fetchInfo, setFetchInfo } = useContext(AppContext);
 
     return (
-        <button onClick={ () => onButtonClick( fetchInfo, setFetchInfo, type, id) } className={`button-${type}`}>{type}</button>
+        <button onClick={ () => onButtonClick( fetchInfo, setFetchInfo, type, id) } data-testid={`button-${type}`} className={`button-${type}`}>{type}</button>
     )
 }
 

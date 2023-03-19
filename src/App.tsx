@@ -23,7 +23,7 @@ export default function App() {
     shownAllRecommendations: false
   });
 
-  // GLOBAL OBJECT/CONTEXT that components from the bottom use to send server requests and check current server <=> client communication status
+  // Global object/context that components from the bottom use to send server requests and check current server <=> client communication status
   const [ fetchInfo, setFetchInfo ] = useState({
     isFetching: false,
     shouldGetNewFilm: true,
@@ -35,7 +35,7 @@ export default function App() {
 
   // Fetch data on mount and when informed to do so
   useEffect( () => {
-    if (fetchInfo.shouldGetNewFilm == true)
+    if (fetchInfo.shouldGetNewFilm === true)
     { 
       setFetchInfo( (fetchInfo) => ({...fetchInfo, shouldGetNewFilm: false}));
       handleQueryNewFilm(fetchInfo, setFetchInfo);
@@ -50,7 +50,7 @@ export default function App() {
     if ( isCorrectFilmObject(receivedObj) )
     {
         // No more recommendations to show
-        if (receivedObj.id == "_RECERROR_01")
+        if (receivedObj.id === "_RECERROR_01")
         {
             console.log("Shown all recommendations!");
             setDisplayInfo((displayInfo) => ({...displayInfo, shownAllRecommendations: true}));
@@ -72,7 +72,7 @@ export default function App() {
   return (
     <div className="container">
       <AppContext.Provider value={ globalAppContextObj  }>
-        { fetchInfo.serverMsg ? <InfoBanner msg={ fetchInfo.serverMsg } /> : null } 
+        {fetchInfo.serverMsg ? <InfoBanner msg={ fetchInfo.serverMsg } /> : null } 
         {fetchInfo.isFetching ? <Loader /> : null }
         <Card filmInfo={ displayInfo.filmInfo } shownAllRecommendations={ displayInfo.shownAllRecommendations } />
       </AppContext.Provider>

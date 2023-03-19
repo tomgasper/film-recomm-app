@@ -1,16 +1,15 @@
-import { render } from "@testing-library/react";
 import { useEffect, useState } from "react";
 import RaitingStar from "./RatingStar";
 
 const Rating = ( { rating } : { rating : number } ) => {
+
     const [ stars , setStars ] = useState<any[]>([]);
-
     useEffect( () => { renderStars() }, [rating] );
-
+    
     const renderStars = () => 
     {
         setStars([]);
-        for (let i = 0; i < Math.floor(rating); i++)
+        for (let i = 0; i < Math.round(rating); i++)
         {
             // handle edge case
             if (stars.length >= 10) return;
@@ -23,7 +22,7 @@ const Rating = ( { rating } : { rating : number } ) => {
     }
 
     return (
-        <div data-testid="rating" className="rating-container">{ stars }</div>
+        <div data-testid="rating-container" className="rating-container">{ stars }</div>
     )
 }
 

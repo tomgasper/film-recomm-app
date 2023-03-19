@@ -18,6 +18,8 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ imgURL} : ImageDisplayProps
         <div className="imgdisplay-container" >
             <div className='imgdisplay-placeholder'>{ !imgLoaded && <ImagePlaceholder /> }</div>
             <img
+            alt="card"
+            data-testid="image-display"
             src={imgURL}
             onLoad={ () => setImgLoaded(true) }
             onError= {(err) => { console.log(err); setImgLoaded(false); }}
