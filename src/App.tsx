@@ -72,7 +72,6 @@ export default function App() {
   return (
     <div className="container">
       <AppContext.Provider value={ globalAppContextObj  }>
-        {fetchInfo.serverMsg ? <InfoBanner msg={ fetchInfo.serverMsg } /> : null } 
         {fetchInfo.isFetching ? <Loader /> : null }
         <Card filmInfo={ displayInfo.filmInfo } shownAllRecommendations={ displayInfo.shownAllRecommendations } />
       </AppContext.Provider>
