@@ -1,20 +1,19 @@
 {
   "files": {
-    "main.css": "/film-recomm-app/static/css/main.c9849fc5.css",
-    "main.js": "/film-recomm-app/static/js/main.976245c2.js",
+    "main.css": "/film-recomm-app/static/css/main.2e996d51.css",
+    "main.js": "/film-recomm-app/static/js/main.d5d5275d.js",
     "static/js/787.303ac7d1.chunk.js": "/film-recomm-app/static/js/787.303ac7d1.chunk.js",
     "static/media/sadface.svg": "/film-recomm-app/static/media/sadface.f30481da74aa71040fbea325bdeb9a26.svg",
     "static/media/star.svg": "/film-recomm-app/static/media/star.0f86fd5b226bb890c13b99345bfe5bb7.svg",
     "static/media/accept.svg": "/film-recomm-app/static/media/accept.e31b838b0a675048f03fa88728083ec3.svg",
     "static/media/reject.svg": "/film-recomm-app/static/media/reject.c11d96143a6ebf129a7c16fac10fef1c.svg",
-    "static/media/placeholder.svg": "/film-recomm-app/static/media/placeholder.ef65149d0731443b8253460c311db11a.svg",
     "index.html": "/film-recomm-app/index.html",
-    "main.c9849fc5.css.map": "/film-recomm-app/static/css/main.c9849fc5.css.map",
-    "main.976245c2.js.map": "/film-recomm-app/static/js/main.976245c2.js.map",
+    "main.2e996d51.css.map": "/film-recomm-app/static/css/main.2e996d51.css.map",
+    "main.d5d5275d.js.map": "/film-recomm-app/static/js/main.d5d5275d.js.map",
     "787.303ac7d1.chunk.js.map": "/film-recomm-app/static/js/787.303ac7d1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9849fc5.css",
-    "static/js/main.976245c2.js"
+    "static/css/main.2e996d51.css",
+    "static/js/main.d5d5275d.js"
   ]
 }
