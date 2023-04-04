@@ -4,7 +4,6 @@ import { handleQueryNewFilm } from "./handlers/handleQuery";
 
 import { AppContext} from "./context/AppContext";
 
-import InfoBanner from "./components/InfoBanner";
 import Card from "./components/Card";
 import Loader from "./components/Loader"
 

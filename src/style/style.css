@@ -104,7 +104,7 @@ body {
     justify-content: space-between;
 }
 
-@keyframes example {
+@keyframes star-animation {
   0%  {width:0px;}
   50%  {width:55px;}
   80% {width: 45px;}
@@ -114,7 +114,7 @@ body {
 .rating-container-star img
 {
   width:50px;
-  animation-name: example;
+  animation-name: star-animation;
   animation-timing-function: ease-in-out;
   animation-duration: 0.3s;
 }
@@ -194,19 +194,40 @@ input[type="button"].button-accept {
     animation: spinner 0.7s ease-in-out infinite;
   }
 
+
   .loader-container {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: #ffffff52;
   }
+
+  .img-loader-container
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .img-loader-spinner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    animation: fade-in 0.05s;
+    transform: translate(-50%, -50%);
+}
 
   .loader-spinner-container {
     position: absolute;
 
     animation: fade-in 0.05s;
 
-    top: 45%;
+    top: 40%;
     left: 50%;
 
     transform: translate(-50%, -50%);
@@ -216,7 +237,6 @@ input[type="button"].button-accept {
   .container
 {
     display: flex;
-    justify-content: normal;
     align-items: center;
     background-color: rgba(243, 244, 252, 0.763);
     width: 100%;

@@ -3,10 +3,10 @@ import { mockDB } from "./mockDB";
 export function mockAPICall(path : string, requestInfo : any ) : Promise<any>
 {
     // delay in ms
-    const delay = 250;
+    const delay = 300;
 
     return new Promise((resolve, reject) => {
-        setTimeout(() => localFetch(path,requestInfo), delay);
+        setTimeout( () => localFetch(path,requestInfo), delay);
 
         function localFetch(path: string, requestInfo : any )
         {

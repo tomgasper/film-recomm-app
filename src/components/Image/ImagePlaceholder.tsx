@@ -1,8 +1,13 @@
 import imgPlaceholderSVG from "./placeholder.svg"
+import Loader from "../../components/Loader"
 
 const ImagePlaceholder = () => {
-    return(
-        <img alt="placeholder" data-testid="image-placeholder" src= {imgPlaceholderSVG} />
+    return (
+        <div data-testid="image-placeholder" className="img-loader-container">
+            <div className="loader-spinner-container">
+                    <div className="loading-spinner2"></div> 
+            </div>
+        </div>
     )
 }
 
