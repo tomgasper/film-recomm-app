@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/film-recomm-app/static/css/main.2e996d51.css",
-    "main.js": "/film-recomm-app/static/js/main.d5d5275d.js",
+    "main.js": "/film-recomm-app/static/js/main.07a8e2c7.js",
     "static/js/787.303ac7d1.chunk.js": "/film-recomm-app/static/js/787.303ac7d1.chunk.js",
     "static/media/sadface.svg": "/film-recomm-app/static/media/sadface.f30481da74aa71040fbea325bdeb9a26.svg",
     "static/media/star.svg": "/film-recomm-app/static/media/star.0f86fd5b226bb890c13b99345bfe5bb7.svg",
@@ -9,11 +9,11 @@
     "static/media/reject.svg": "/film-recomm-app/static/media/reject.c11d96143a6ebf129a7c16fac10fef1c.svg",
     "index.html": "/film-recomm-app/index.html",
     "main.2e996d51.css.map": "/film-recomm-app/static/css/main.2e996d51.css.map",
-    "main.d5d5275d.js.map": "/film-recomm-app/static/js/main.d5d5275d.js.map",
+    "main.07a8e2c7.js.map": "/film-recomm-app/static/js/main.07a8e2c7.js.map",
     "787.303ac7d1.chunk.js.map": "/film-recomm-app/static/js/787.303ac7d1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2e996d51.css",
-    "static/js/main.d5d5275d.js"
+    "static/js/main.07a8e2c7.js"
   ]
 }
