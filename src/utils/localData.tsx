@@ -24,7 +24,7 @@ export const data =
         },
         {
         "id": "0021bc",
-        "imageURL" : "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/91ebheNmoUL._RI_.jpg",
+        "imageURL" : "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
         "title": "The Dark Knight",
         "summary": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
         "rating": 9.0
@@ -45,7 +45,7 @@ export const data =
         },
         {
         "id": "cx00fc",
-        "imageURL" : "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71PfZFFz9yL._AC_UF894,1000_QL80_.jpg",
+        "imageURL" : "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
         "title": "The Matrix",
         "summary": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
         "rating": 7.9
